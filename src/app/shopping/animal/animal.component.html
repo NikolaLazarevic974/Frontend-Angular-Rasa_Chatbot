@@ -1,0 +1,55 @@
+<div class="container" fxLayout="row">
+  <div class="image-container" fxFlex="40">
+    <img fxFill [src]="'assets/images/' + animalForInput.image" style="object-fit: cover;" />
+  </div>
+  <div class="info-container" fxFlex="60">
+    <p class="animal-name">{{ this.animalForInput.name }}</p>
+    <p class="species">{{ animalForInput.type | titlecase }} - {{ animalForInput.species | titlecase }}</p>
+    <mat-divider></mat-divider>
+    <div class="second-info-container" fxLayout="row">
+      <div class="basic-info-container" fxFlex="50">
+        <p class="age">Age: {{ animalForInput.age }} years</p>
+        <p class="sizes">Size: {{ getFullSize(animalForInput.sizes) }}</p>
+      </div>
+      <mat-divider [vertical]="true"></mat-divider>
+      <div class="additional-info-container" fxFlex="50">
+        <p class="price">{{ animalForInput.price }}$</p>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+
+    <!-- Description Section -->
+    <div class="description-container">
+      <h4>Description:</h4>
+      <p>{{ animalForInput.description }}</p>
+    </div>
+
+    <div class="lower-container" fxLayout="row">
+      <div class="reviews" fxFlex="50">
+        <p class="reviews-header">Reviews</p>
+        <mat-card *ngFor="let review of animalForInput.reviews">
+          <mat-card-content>
+            {{ review }}
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="cart-review-container" fxFlex="50">
+        <button mat-raised-button class="add-to-cart-button" (click)="addToCart(animalForInput)">
+          Add to Cart
+        </button>
+        <form class="review-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+          <mat-form-field class="example-full-width">
+            <mat-label>Leave a review</mat-label>
+            <textarea
+              matInput
+              ngModel
+              placeholder="Thank you for your review..."
+              name="review"
+            ></textarea>
+          </mat-form-field>
+          <button mat-raised-button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

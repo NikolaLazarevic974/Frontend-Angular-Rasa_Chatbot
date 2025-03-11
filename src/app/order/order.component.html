@@ -1,0 +1,37 @@
+<div class="orders-wrapper">
+  <div *ngFor="let order of dataSource" class="order-container">
+    <div class="order-details">
+      <div class="id-status-div"><p>ID: {{ order.id }}</p> <p>Status: {{ order.status }}</p></div>
+      <div><p>Total Price: {{ order.totalPrice}}</p></div>
+    </div>
+  
+    <div class="items-container">
+      <div *ngFor="let item of order.cartAnimals" class="item-box">
+        <img [src]="'assets/images/' + item.image" alt="{{ item.name }}" class="item-image" />
+        <div class="quantity-label" *ngIf="item.quantity > 1">
+          x{{ item.quantity }}
+        </div>
+      </div>
+    </div>
+  
+    <div class="button-container">
+        <button 
+          mat-raised-button 
+          color="primary" 
+          *ngIf="order.status === 'canceled'; else cancelButton" 
+          (click)="changeOrderStatus(order, 'accepted')">
+          Order Again
+        </button>
+    
+        <ng-template #cancelButton>
+          <button 
+            mat-raised-button 
+            color="warn" 
+            [disabled]="order.status !== 'accepted'" 
+            (click)="cancelOrder(order)">
+            Cancel Order
+          </button>
+        </ng-template>
+      </div>
+  </div>
+</div>

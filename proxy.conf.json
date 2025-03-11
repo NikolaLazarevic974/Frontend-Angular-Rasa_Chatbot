@@ -1,0 +1,9 @@
+{
+    "/webhooks": {
+      "target": "http://localhost:5005",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+  

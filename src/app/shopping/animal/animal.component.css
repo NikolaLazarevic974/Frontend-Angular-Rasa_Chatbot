@@ -1,0 +1,88 @@
+.info-container {
+    padding:20px;
+    width:100%;
+}
+
+.animal-name {
+    font-size:30px;
+    color:aliceblue;
+}
+
+.basic-info-container {
+    padding: 5px;
+}
+
+.additional-info-container {
+    padding: 5px 0px 10px 20px;
+}
+
+
+.species {
+    font-size: 16px;
+    color: black;
+}
+
+.age {
+    font-size: 16px;
+    color: aliceblue;
+}
+
+.sizes {
+    font-size: 16px;
+    color: aliceblue;
+}
+
+.date {
+    font-size: 16px;
+    color: aliceblue;
+    margin-top:5px;
+}
+
+.price {
+    padding-top:20px;
+    font-size: 32px;
+    color:aliceblue;
+}
+
+.lower-container {
+    padding-top: 20px;
+}
+
+.reviews-header {
+    font-size:20px;
+    color:aliceblue;
+}
+
+.reviews {
+    padding-right:10px;
+    height:200px;
+    overflow-y: auto;
+}
+
+mat-card {
+    margin:15px;
+    color:aliceblue;
+}
+
+.add-to-cart-button {
+    margin-bottom: 15px;
+}
+
+.cart-review-container {
+    padding-left: 15px;
+}
+
+.description-container {
+    margin-top: 15px;
+  }
+  
+  .description-container h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color:aliceblue;
+  }
+  
+  .description-container p {
+    font-size: 14px;
+  }
+  

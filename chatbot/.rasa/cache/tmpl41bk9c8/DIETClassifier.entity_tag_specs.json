@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-age",
+      "2": "I-age",
+      "3": "L-age",
+      "4": "U-age",
+      "5": "B-size",
+      "6": "I-size",
+      "7": "L-size",
+      "8": "U-size",
+      "9": "B-type",
+      "10": "I-type",
+      "11": "L-type",
+      "12": "U-type",
+      "13": "B-years",
+      "14": "I-years",
+      "15": "L-years",
+      "16": "U-years",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-age": 1,
+      "I-age": 2,
+      "L-age": 3,
+      "U-age": 4,
+      "B-size": 5,
+      "I-size": 6,
+      "L-size": 7,
+      "U-size": 8,
+      "B-type": 9,
+      "I-type": 10,
+      "L-type": 11,
+      "U-type": 12,
+      "B-years": 13,
+      "I-years": 14,
+      "L-years": 15,
+      "U-years": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

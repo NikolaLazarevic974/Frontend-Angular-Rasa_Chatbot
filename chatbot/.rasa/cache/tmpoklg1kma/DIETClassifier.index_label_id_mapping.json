@@ -1,0 +1,14 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "deny",
+  "3": "find_pets_by_type",
+  "4": "goodbye",
+  "5": "greet",
+  "6": "inform",
+  "7": "mood_great",
+  "8": "mood_unhappy",
+  "9": "recommend_pet",
+  "10": "recommend_specific_pet",
+  "11": "test_sanic_actions"
+}

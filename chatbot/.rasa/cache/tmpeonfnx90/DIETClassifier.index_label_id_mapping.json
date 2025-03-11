@@ -1,0 +1,13 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "deny",
+  "3": "find_pets_by_type",
+  "4": "find_specific_pets",
+  "5": "get_cart_info",
+  "6": "get_order_status",
+  "7": "goodbye",
+  "8": "greet",
+  "9": "mood_great",
+  "10": "mood_unhappy"
+}

@@ -1,0 +1,94 @@
+<div class="main-container">
+  <div fxLayout="row" fxLayoutAlign="start stretch" class="container">
+    <!-- Left sidebar -->
+    <div fxFlex="25%" class="sidebar">
+      <mat-card id="filters">
+        <mat-card-content>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Search</mat-label>
+            <input #search type="text" matInput (keyup)="applyFilter($any($event.target).value)" placeholder="Filter">
+          </mat-form-field>
+          <mat-accordion class="example-headers-align" multi>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title> Type </mat-panel-title>
+              </mat-expansion-panel-header>
+              <section>
+                <mat-checkbox #checkbox *ngFor="let type of types" [value]="type" (change)="onTypeChange($event, type)">
+                  {{ type | titlecase }}
+                </mat-checkbox>
+              </section>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title> Size </mat-panel-title>
+              </mat-expansion-panel-header>
+              <section>
+                <mat-checkbox #checkbox *ngFor="let size of sizes" [value]="size" (change)="onSizeChange($event, size)">
+                  {{ getFullSize(size) }}
+                </mat-checkbox>
+              </section>
+            </mat-expansion-panel>
+            
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title> Sort By </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-select [(ngModel)]="selectedSort" (selectionChange)="sortAnimals()">
+                <mat-option value="nameAsc">Name (Ascending)</mat-option>
+                <mat-option value="nameDesc">Name (Descending)</mat-option>
+                <mat-option value="priceAsc">Price (Ascending)</mat-option>
+                <mat-option value="priceDesc">Price (Descending)</mat-option>
+              </mat-select>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-card-content>
+        <div id="slider" fxLayout="column" fxLayoutAlign="stretch">
+          <h4>Price Range</h4>
+          <mat-slider
+            [min]="0"
+            [max]="maxPrice+1"
+            [step]="1"
+            [discrete]="true"
+            [showTickMarks]="true">
+            <input matSliderThumb [(ngModel)]="selectedPrice" (valueChange)="onPriceChange($event)">
+          </mat-slider>
+          <p>Selected max price: {{ selectedPrice | currency }}</p>
+        </div>
+        <button id="resetButton" mat-raised-button (click)="resetFilters()">Reset</button>
+      </mat-card>
+    </div>
+
+    <!-- Right content area -->
+    <div fxFlex="75%" class="content">
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="33.3%" fxFlex.lt-md="50%" fxFlex.lt-sm="100%" *ngFor="let animal of displayedAnimals">
+          <mat-card class="animal-card">
+            <img mat-card-image [src]="'assets/images/' + animal.image" [alt]="animal.name" class="animal-card-image" (click)="openAnimal(animal.id)">
+            <mat-card-header class="mat-card-header">
+              <mat-card-title class="mat-card-title">{{ animal.name }}</mat-card-title>
+              <mat-card-subtitle class="mat-card-subtitle">{{ animal.type | titlecase }} - {{ animal.species | titlecase }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="mat-card-content" fxLayout="row" fxLayoutAlign="end end">
+              <div fxFlex="80%">
+                <p>Age: {{ animal.age }}</p>
+                <p>Size: {{ getFullSize(animal.sizes) }}</p>
+              </div>
+              <div fxFlex="20%">
+                <p class="price">Price: {{ animal.price | currency }}</p>
+              </div>
+            </mat-card-content>
+            <div fxLayout fxLayoutAlign="row" id="buttons">
+              <button mat-raised-button fxFlex="80" (click)="openAnimal(animal.id)" class="button-details">Details</button>
+              <button mat-raised-button fxFlex="20" class="button-add-to-cart" (click)="addToCart(animal)">
+                <mat-icon>add_shopping_cart</mat-icon>
+              </button>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 15, 20, 30]" (page)="onPageChange($event)">></mat-paginator>
+</div>

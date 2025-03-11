@@ -1,0 +1,10 @@
+[
+  {
+    "name": "size",
+    "pattern": "\\b(very\\s+)?(small|medium|large)\\b"
+  },
+  {
+    "name": "type",
+    "pattern": "\\b(dog|cat|parrot|hamster|chinchilla|fish)\\b"
+  }
+]

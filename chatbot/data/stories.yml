@@ -1,0 +1,52 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+- story: find pets by the type
+  steps:
+  - intent: find_pets_by_type
+  - action: action_recommend_pet_by_type
+
+
+- story: find specific pets
+  steps:
+  - intent: find_specific_pets
+  - action: action_recommend_specific_pet
+
+- story: get status of the order by id
+  steps:
+  - intent: get_order_status
+  - action: action_get_order_status
+
+- story: get information about the cart
+  steps:
+  - intent: get_cart_info
+  - action: action_get_cart_info

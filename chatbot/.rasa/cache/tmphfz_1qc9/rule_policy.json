@@ -1,0 +1,33 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommend_animal\"}}]": "utter_ask_species",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_species\"}, \"user\": {\"intent\": \"recommend_animal\"}}]": "utter_ask_size",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_species\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_size\"}, \"user\": {\"intent\": \"recommend_animal\"}}]": "utter_ask_age",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_species\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_size\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_age\"}, \"user\": {\"intent\": \"recommend_animal\"}}]": "action_recommend_animal",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_species\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_size\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"utter_ask_age\"}, \"user\": {\"intent\": \"recommend_animal\"}}, {\"prev_action\": {\"action_name\": \"action_recommend_animal\"}, \"user\": {\"intent\": \"recommend_animal\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_sanic_actions\"}}]": "action_hello_world",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_sanic_actions\"}}, {\"prev_action\": {\"action_name\": \"action_hello_world\"}, \"user\": {\"intent\": \"test_sanic_actions\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_favorite_color\"}}]": "action_process_color",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"ask_favorite_color\"}}, {\"prev_action\": {\"action_name\": \"action_process_color\"}, \"user\": {\"intent\": \"ask_favorite_color\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_sanic_actions\"}}, {\"prev_action\": {\"action_name\": \"action_hello_world\"}, \"user\": {\"intent\": \"test_sanic_actions\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"test_sanic_actions\"}}]",
+      "predicting default action with intent restart",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]"
+    ]
+  }
+}

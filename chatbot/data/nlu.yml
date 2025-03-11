@@ -1,0 +1,215 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+- intent: find_pets_by_type
+  examples: |
+    - recommend some [dogs](type)
+    - recommend some [cats](type)
+    - recommend some [parrots](type)
+    - give me some [chinchillas](type)
+    - show me some [fish](type)
+    - what kind of [dogs](type) do you have?
+    - what kind of [cats](type) do you have?
+    - what is your selection of [dogs](type) like?
+
+- intent: get_order_status
+  examples: |
+    - what is the status of my order [drdnpM7G3HL4yxk51zggG](id)
+    - What is the status of my order [uBjBGBScPR69KgaiO4tGq](id)?
+    - Can you check the status of order [MNPO3FQhz7RXij43Bae0j](id)?
+    - Where is my order [tEc6hadRI5u8qixWDxnFX](id)?
+    - I want to know the status of order ID [2cDrTWhyzY4ujhjb-YojX](id).
+    - Is order [dqZpzvHfIjcoi4NB_aJk4](id) delivered?
+    - Check the order status for [djt5UOzhLm5CLHGTD9_lD](id).
+
+- intent: get_cart_info
+  examples: |
+    - What's in my cart?
+    - Can you show me my cart?
+    - How many items are in my cart?
+    - What's the status of my cart?
+    - Do I have anything in my cart?
+    - Can I check my cart?
+    - Show me the contents of my cart.
+    - Can you tell me what's in my shopping cart?
+    - I'd like to view my cart.
+    - What items are currently in my cart?
+
+- intent: find_specific_pets
+  examples: |
+    - i am looking for a [dog](type) that is [small](size) and under [2](age) years old
+    - i want to adopt a [cat](type) that is [very small](size) and younger than [1](age) year
+    - i am interested in a [parrot](type) that is [medium](size) and under [3](age) years old
+    - i would like to buy a [chinchilla](type) that is [large](size) and less than [5](age) years old
+    - i am searching for a [fish](type) that is [very small](size) and under [1](age) year old
+    - i want a [dog](type) that is [very large](size) and younger than [4](age) years
+    - i am looking for a [cat](type) that is [small](size) and under [2](age) years old
+    - i would like to adopt a [parrot](type) that is [very large](size) and less than [6](age) years old
+    - i am interested in a [chinchilla](type) that is [medium](size) and under [3](age) years old
+    - i want to buy a [fish](type) that is [small](size) and younger than [1](age) year
+    - i am looking for a [dog](type) that is [large](size) and under [5](age) years old
+    - i want a [cat](type) that is [very small](size) and less than [2](age) years old
+    - i would like to adopt a [parrot](type) that is [small](size) and under [4](age) years old
+    - i am searching for a [chinchilla](type) that is [very large](size) and younger than [7](age) years
+    - i want to buy a [fish](type) that is [medium](size) and under [2](age) years old
+    - i am looking for a [dog](type) that is [very small](size) and less than [1](age) year old
+    - i want a [cat](type) that is [large](size) and under [3](age) years old
+    - i would like to adopt a [parrot](type) that is [very small](size) and younger than [2](age) years
+    - i am interested in a [chinchilla](type) that is [small](size) and under [4](age) years old
+    - i want to buy a [fish](type) that is [very large](size) and less than [5](age) years old
+    - i am looking for a [dog](type) that is [medium](size) and under [2](age) years old
+    - i want a [cat](type) that is [very large](size) and younger than [6](age) years
+    - i would like to adopt a [parrot](type) that is [large](size) and under [3](age) years old
+    - i am searching for a [chinchilla](type) that is [very small](size) and less than [1](age) year old
+    - i want to buy a [fish](type) that is [small](size) and under [2](age) years old
+
+
+- synonym: very small
+  examples: |
+    - tiny
+    - extra small
+    - xs
+    - itsy bitsy
+- synonym: small
+  examples: |
+    - little
+    - petite
+    - compact
+- synonym: medium
+  examples: |
+    - average
+    - mid-sized
+    - moderate
+- synonym: large
+  examples: |
+    - big
+    - huge
+    - giant
+- synonym: very large
+  examples: |
+    - extra large
+    - xl
+    - enormous
+    - massive
+
+- synonym: dog
+  examples: |
+    - puppy
+    - canine
+    - pooch
+- synonym: cat
+  examples: |
+    - kitten
+    - feline
+    - kitty
+- synonym: parrot
+  examples: |
+    - bird
+    - macaw
+    - cockatoo
+- synonym: hamster
+  examples: |
+    - rodent
+    - small pet
+- synonym: fish
+  examples: |
+    - goldfish
+    - aquatic pet
+    - guppy
+
+- regex: size
+  examples: |
+    - \b(very\s+)?(small|medium|large)\b
+- regex: type
+  examples: |
+    - \b(dog|cat|parrot|hamster|chinchilla|fish)\b

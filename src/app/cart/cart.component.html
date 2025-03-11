@@ -1,0 +1,79 @@
+<div class="main-container">
+<div fxLayoutAlign="center center" class="title-container">
+    <h1 class="title">Cart</h1>
+</div>
+
+
+
+<div class="cart" fxLayout="row">
+
+
+<div fxLayout="column" fxLayoutAlign="left start" class="nav-container" fxFlex="30">
+    <div fxflex="20">
+    <mat-form-field>
+        <input type="text" matInput (keyup)="doFilter($any($event.target).value)" placeholder="Filter">
+    </mat-form-field>
+    </div>
+    <mat-divider></mat-divider>
+    <div fxFlex="80" fxFlexAlign="center center" class="total-container">
+    <p class="total">Total: {{getTotalPrice()}}</p>
+    <button mat-raised-button (click)="checkout()">Checkout</button>
+    </div>
+</div>
+
+
+<div class="table-container" fxFlex="70">
+    <div fxLayout="column" fxLayoutAlign="center center" class="cart-container" *ngIf="cartItems.length === 0">
+
+        <div class="empty-cart">
+            <h1>Your cart is empty</h1>
+            <p>Please add items to your cart</p>
+        </div>    
+    </div>
+<mat-table [dataSource]="cartSource" matSort  *ngIf="cartItems.length > 0">
+
+    <ng-container matColumnDef="image">
+        <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
+        <mat-cell *matCellDef="let el"> <img [src]="'assets/images/' + el.image"></mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let el"> {{el.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
+        <mat-cell *matCellDef="let el"> {{el.price * el.quantity | number}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</mat-header-cell>
+        <mat-cell *matCellDef="let el">
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <button mat-icon-button (click)="decreaseQuantity(el)">
+                    <mat-icon>remove</mat-icon>
+                </button>
+                <span class="mx-2">{{el.quantity | number}}</span>
+                <button mat-icon-button (click)="increaseQuantity(el)">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="remove?">
+        <mat-header-cell *matHeaderCellDef>Remove?</mat-header-cell>
+        <mat-cell *matCellDef="let el"><button mat-fab extended (click)="removeItem(el.id)">Remove</button></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let rows; columns: displayedColumns"></mat-row>
+
+</mat-table>
+
+</div>
+</div>
+<mat-paginator [pageSize]="5" [pageSizeOptions]="[5,7,9,10]" *ngIf="cartItems.length > 0"></mat-paginator>
+
+</div>

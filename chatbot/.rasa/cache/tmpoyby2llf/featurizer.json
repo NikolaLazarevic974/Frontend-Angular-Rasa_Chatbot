@@ -1,0 +1,68 @@
+{
+  "type": "IntentMaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "bot_challenge": 2,
+        "deny": 3,
+        "find_pets_by_type": 4,
+        "find_specific_pets": 5,
+        "get_cart_info": 6,
+        "get_order_status": 7,
+        "goodbye": 8,
+        "greet": 9,
+        "mood_great": 10,
+        "mood_unhappy": 11,
+        "nlu_fallback": 12,
+        "out_of_scope": 13,
+        "restart": 14,
+        "session_start": 15
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_recommend_pet_by_type": 13,
+        "action_recommend_specific_pet": 14,
+        "action_get_order_status": 15,
+        "action_get_cart_info": 16,
+        "utter_cheer_up": 17,
+        "utter_did_that_help": 18,
+        "utter_goodbye": 19,
+        "utter_greet": 20,
+        "utter_happy": 21,
+        "utter_iamabot": 22
+      },
+      "entities": {
+        "age": 0,
+        "id": 1,
+        "size": 2,
+        "type": 3
+      },
+      "slots": {
+        "type_0": 0,
+        "size_0": 1,
+        "age_0": 2,
+        "age_1": 3,
+        "id_0": 4
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

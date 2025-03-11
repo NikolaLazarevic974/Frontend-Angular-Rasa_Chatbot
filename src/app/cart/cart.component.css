@@ -1,0 +1,63 @@
+.main-container {
+    padding: 20px 0px 0px 20px;
+}
+
+.title-container {
+    padding: 15px;
+
+}
+
+.empty-cart h1{
+    font-size: 3rem;
+    margin-top: 45%;
+}
+
+.empty-cart p{
+    font-size:1rem;
+}
+
+mat-cell img {
+    max-width: 100px;  /* Adjust the maximum width as needed */
+    height: auto;  /* Maintain aspect ratio */
+    display: block;  /* Remove any extra space below the image */
+    margin: 0 auto;  /* Center the image horizontally */
+    border-radius: 5px;  /* Optional: rounds the corners of the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional: adds a subtle shadow */
+  }
+  
+  /* Optional: Add hover effect */
+  mat-cell img:hover {
+    transform: scale(1.05);  /* Slightly enlarge the image on hover */
+    transition: transform 0.3s ease;  /* Smooth transition for the hover effect */
+  }
+  
+  /* Ensure the table cell doesn't grow too large */
+  mat-cell {
+    padding: 10px;  /* Add some padding around the image */
+  }
+
+  mat-paginator {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000; /* This ensures the paginator stays on top of other content */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for visual separation */
+  }
+
+.cart {
+    height: 100%;
+}
+
+.title {
+    font-size: 42px;
+    color:aliceblue;
+}
+
+.total {
+    color: white;
+    font-size: 32px;
+    padding-bottom: 20px;
+}
+
+mat-form-field {
+    padding-bottom: 20px;
+}

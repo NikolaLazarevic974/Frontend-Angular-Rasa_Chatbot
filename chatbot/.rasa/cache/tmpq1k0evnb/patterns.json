@@ -1,0 +1,26 @@
+[
+  {
+    "name": "color",
+    "pattern": "[blue](color)"
+  },
+  {
+    "name": "color",
+    "pattern": "[green](color)"
+  },
+  {
+    "name": "color",
+    "pattern": "[orange](color)"
+  },
+  {
+    "name": "color",
+    "pattern": "[purple](color)"
+  },
+  {
+    "name": "color",
+    "pattern": "[red](color)"
+  },
+  {
+    "name": "color",
+    "pattern": "[yellow](color)"
+  }
+]
